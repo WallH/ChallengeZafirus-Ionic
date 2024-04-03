@@ -1,0 +1,7 @@
+{
+  "name": "ChallengeZafirus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
