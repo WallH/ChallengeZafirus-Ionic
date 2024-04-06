@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title translate>superherolist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" translate>superherolist</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    
+    <ion-item *ngFor="let superhero of superherolist" button (click)="testButton(superhero)">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" [src]="superhero.thumbnail?.path +'.' + superhero.thumbnail?.extension" />
+      </ion-avatar>
+      <ion-label>{{ superhero.name }}</ion-label>
+      
+      
+    </ion-item>
+  </ion-list>
+</ion-content>

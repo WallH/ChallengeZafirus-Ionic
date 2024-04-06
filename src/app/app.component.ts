@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Device } from '@capacitor/device';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,12 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'es']);
+
+    Device.getLanguageCode().then((language) => {
+      let lang = language.value;
+      this.translate.setDefaultLang(lang);
+    });
+  }
 }

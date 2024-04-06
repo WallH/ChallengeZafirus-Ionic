@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ character.name ?? ""}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ character.name ?? ""}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img [src]="character.image"></ion-img>
+      <ion-list>
+        <ion-item>
+          <ion-label translate>quantitycomics</ion-label>
+          <ion-note slot="end">{{ character.comics}}:</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label translate>quantityseries</ion-label>
+          <ion-note slot="end">{{ character.series}}:</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label translate>quantitystories</ion-label>
+          <ion-note slot="end">{{ character.stories}}:</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
